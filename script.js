@@ -12,6 +12,7 @@ getMovies(API_URL)
 async function getMovies(url) {
     const res = await fetch(url)
     const data = await res.json()
+    console.log(data.results);
     showMovies(data.results);
 }
 
@@ -44,7 +45,7 @@ function getClassByRate(vote) {
     else return 'red'
 }
 
-form.addEventListener('submit', function() {
+form.addEventListener('submit', function(e) {
     e.preventDefault()
     const searchTerm = search.value
 
